@@ -30,6 +30,9 @@ spec:
       containers:
       - name: metrics-server
         image: k8s.gcr.io/metrics-server/metrics-server:v0.3.7
+        command:
+          - /metrics-server
+          - --kubelet-insecure-tls
         imagePullPolicy: IfNotPresent
         args:
           - --cert-dir=/tmp
